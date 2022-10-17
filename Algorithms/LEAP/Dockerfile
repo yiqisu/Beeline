@@ -1,4 +1,4 @@
-FROM r-base:3.5.3
+FROM r-base
 
 LABEL maintainer = "Aditya Pratapa <adyprat@vt.edu>"
 
@@ -12,4 +12,4 @@ COPY runLeap.R /
 
 RUN mkdir data/
 
-RUN apt-get update && apt-get install time
+RUN apt-get update && apt-get install -y time

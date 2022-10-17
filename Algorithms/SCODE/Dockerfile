@@ -1,4 +1,4 @@
-FROM r-base:3.5.3
+FROM r-base
 
 LABEL maintainer = "Aditya Pratapa <adyprat@vt.edu>"
 
@@ -7,7 +7,11 @@ USER root
 WORKDIR /
 
 
-RUN apt-get update && apt-get install -y  gcc-8-base 
+RUN apt-get update 
+
+# RUN add-apt-repository ppa:ubuntu-toolchain-r/test
+
+RUN apt-get install -y  gcc
 
 RUN apt-get install -y git
 
@@ -25,4 +29,4 @@ RUN R -e "install.packages('https://cran.r-project.org/src/contrib/MASS_7.3-51.3
 
 
 
-RUN apt-get install time
+RUN apt-get install -y time
